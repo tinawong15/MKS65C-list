@@ -8,10 +8,11 @@ void print_list(struct node *n){
     printf("Node Value: %d\n", p->i);
     p = p->next;
   }
+  printf("NULL\n");
 }
 
 struct node * insert_front(struct node *n, int i) {
-  struct node *newHead = malloc(1 * sizeof(struct node));
+  struct node *newHead = malloc(sizeof(struct node));
   newHead->i = i;
   newHead->next = n;
   return newHead;
@@ -25,5 +26,5 @@ struct node * free_list(struct node *n) {
     current = current->next;
     p = current;
   }
-  return n;
+  return current;
 }

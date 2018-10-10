@@ -3,21 +3,17 @@
 # include <stdlib.h>
 
 int main() {
-  struct node *head = malloc(1*sizeof(struct node));
-  struct node *middle = malloc(1*sizeof(struct node));
-  struct node *tail = malloc(1*sizeof(struct node));
-  head->i = 1;
-  head->next = middle;
-  middle->i = 2;
-  middle->next = tail;
-  tail->i = 3;
-  tail->next = 0;
+  struct node *head = NULL;
+  head = insert_front(head, 1);
+  head = insert_front(head, 2);
+  head = insert_front(head, 3);
   printf("======= PRINT LINKED LIST =======\n");
   print_list(head);
   printf("====== INSERT AT FRONT ========\n");
-  print_list(insert_front(head, 10));
+  head = insert_front(head, 4);
+  print_list(head);
   printf("======= FREE LIST =======\n");
-  struct node * headPointer = free_list(head);
-  printf("%d\n", headPointer->i);
+  head = free_list(head);
+  print_list(head);
   return 0;
 }
