@@ -5,7 +5,7 @@
 void print_list(struct node *n){
   struct node *p = n;
   while(p) {
-    printf("Node Value: %d\n", p->i);
+    printf("Node Value: %d --> ", p->i);
     p = p->next;
   }
   printf("NULL\n");
